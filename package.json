@@ -16,7 +16,7 @@
     "test:dev": "npm run test -- --watch",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "dev": "better-npm-run dev",
-    "build": "better-npm-run build"
+    "deploy": "better-npm-run deploy"
   },
   "betterScripts": {
     "compile": {
@@ -25,7 +25,7 @@
         "DEBUG": "app:*"
       }
     },
-    "build": {
+    "deploy": {
       "command": "npm run clean && npm run compile",
       "env": {
         "NODE_ENV": "production",
