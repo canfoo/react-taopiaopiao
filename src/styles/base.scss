@@ -1,0 +1,30 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,article,aside,canvas,details,figcaption,figure,footer,header,menu,nav,section,audio,video{margin:0;padding:0;-webkit-text-size-adjust:none}
+article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block;padding:0px;margin:0px;}
+body,input,textarea,select,button,table{font-size:.26rem}
+input,select,button{vertical-align: middle}
+body{color:#333!important;-webkit-text-size-adjust:none;font-family:"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Hiragino Kaku Gothic Pro",Meiryo,"Malgun Gothic",sans-serif}
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0)}
+input{-webkit-appearance:none}
+img,fieldset{border:0}
+img{max-width:100%}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{color:#000;text-decoration:none}
+table{border-collapse:collapse}
+.rel{position:relative}
+.abs{position:absolute}
+.db{display:block}
+.dib{display:inline-block}
+.di{display:inline}
+.dn{display:none}
+.o{overflow:hidden}
+.l{float:left}
+.r{float:right}
+.h100{height:100%}
+.w100{width:100%}
+.vt{vertical-align:top}
+.vm{vertical-align:middle}
+.tl{text-align:left}
+.tc{text-align:center}
+.bgf{background:#fff}
+.dot{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}

@@ -1,0 +1,167 @@
+#period {
+	background-color: #fff;
+	margin-bottom: 1rem;
+	.sel-date {
+		width: 100%;
+		overflow: hidden;
+		overflow-x: scroll;
+		ul {
+			width: 8.4rem;
+		}
+		li {
+			float: left;
+		    width: 2rem;
+		    height: .80rem;
+		    line-height: .80rem;
+		    background-color: #fff;
+		    font-size: .26rem;
+		    color: #555;
+		    padding-left: .10rem;
+		}
+		.move {
+			bottom: 0;
+			display: inline-block;
+			width: 2.1rem;
+			transition: left .3s ease-in-out;
+			border-bottom: .06rem solid #ff4d64;
+		}
+	}
+	.font-icon {
+	    color: #fff;
+	    height: .40rem;
+	    border-radius: .06rem;
+	    background-color: #ff9201;
+	    margin-left: .10rem;
+	}
+	.tips {
+		margin-top: -.16rem;
+	    padding: .10rem .30rem;
+	    font-size: .24rem;
+	    color: #ffa101;
+	    text-align: left;
+	    background-color: #fbf9e4;
+	    border-top: 1px solid #fbeccd;
+	    border-bottom: 1px solid #fbeccd;
+	}
+	.vm {
+		vertical-align: middle;
+		display: inline-block;
+	}
+	.line {
+	    text-align: center;
+	    margin-top: .20rem;
+	}
+	.le {
+	    display: inline-block;
+	    width: 35%;
+	    border-bottom: .02rem dashed #d7d7d7;
+	}
+	.lef {
+	    color: #999;
+	    font-weight: 400;
+	    font-size: .20rem;
+	    margin-right: 2.5%;
+	}
+	.ic {
+	    display: inline-block;
+	    width: .32rem;
+	    height: .32rem;
+	    border-radius: 100%;
+	    background-size: 90%;
+	    background-position: center center;
+	    background-repeat: no-repeat;
+	    margin-left: 2.5%;
+	}
+	.md {
+		background-image: url('../assets/md.svg');
+		background-color: #b8dcf6;
+	}
+	.nd {
+		background-image: url('../assets/nd.svg');
+		background-color: #faccaa;
+	}
+	.ad {
+		background-image: url('../assets/ad.svg');
+		background-color: #cac1f8;
+	}
+	.pdate li {
+	    height: 1.3rem;
+	    padding: .30rem .20rem .20rem .30rem;
+	    border-bottom: 1px solid #ebebeb;
+	}
+	.pd, .pr-l {
+	    display: inline-block;
+	    width: 45%;
+	}
+	.pd, .pr-l {
+	    display: inline-block;
+	    width: 45%;
+	    position: relative;
+	}
+	.pdate em {
+	    font-size: .36rem;
+	}
+	.fb {
+	    font-weight: bold;
+	}
+	.fo {
+	    font-size: .24rem;
+	    color: #999;
+	}
+	.f1 {
+	    margin-left: .44rem;
+	}
+	.pd div:nth-of-type(2) {
+	    margin-top: .04rem;
+	}
+	.pd, 
+	.pr-l {
+		display: inline-block;
+		width: 45%;
+		text-align: left;
+	}
+	.pdate li:last-child {
+		border-bottom: 0;
+	}
+	.pdate em {
+		font-size: .36rem;
+	}
+	.pdate .buy-btn {
+		left: 59%;
+		bottom: .22rem;
+	}
+	.fo {
+		font-size: .24rem;
+		color: #999;
+	}
+	.f1 {
+		margin-left: .44rem;
+	}
+	.f3 {
+		margin-left: .20rem;
+	}
+	.f4 {
+		display: block;
+		text-decoration: line-through;
+		margin: .04rem 0;
+	}
+	.pr-l {
+		text-align: right;
+	}
+	.prf {
+		color: #fd2c32;
+	}
+	.fl {
+	    float: left;
+	    display: inline;
+	}
+	.fr {
+	    float: right;
+	    display: inline;
+	}
+	.p-btn {
+		left: 59%;
+		bottom: .42rem;
+	}
+}
+

@@ -1,0 +1,52 @@
+@import '../../styles/globalVariable.scss';
+
+.footer-nav {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: -webkit-flex;
+	display: flex;
+	z-index: 100;
+	background-color: #fff;
+	height: 1rem;
+	line-height: 1rem;
+	border-top: 1px solid $bocolor; 
+	nav {
+		flex: 1;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	nav {
+		div.nav-s {
+			color: #ff4d64;
+		}
+	}
+	.nav-icon {
+		width: .44rem;
+		height: .44rem;
+		display: inline-block;
+		color: #8a869e;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -.85rem;
+			left: -.10rem;
+			width: .64rem;
+			font-size: .24rem;
+		}
+	}
+	.hic:after {
+		content: '电影';
+	}
+	.nic:after {
+		content: '影院';
+	}
+	.eic:after {
+		content: '我的';
+	}
+}
+
+

@@ -1,0 +1,73 @@
+#ci-lists {
+	margin-top: .90rem;
+	margin-bottom: 1rem;
+	background-color: #fff;
+	padding: 0rem 0 0rem .30rem;
+	text-align: left;
+	.ci-name {
+		font-weight: 400;
+	    color: #424242;
+	    font-size: .32rem;
+		span {
+			vertical-align: middle;
+		}
+		span:first-child {
+			max-width: 83%;
+		}
+	}
+	li {
+		padding: .30rem .30rem .24rem 0;
+		border-bottom: 1px solid #ebebeb;
+	}
+	li:last-child {
+		border-bottom: 0px;
+	}
+	.ci-name span {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.ci-address,
+	.ci-welfare {
+		color: gray;
+		font-size: .20rem;
+		margin-top: .20rem;
+	}
+}
+
+.label-mod.label-border-blue {
+    border: 1px solid #00b8f0;
+    color: #00b8f0;
+}
+.label-mod {
+    display: inline-block;
+    margin: 0 1px;
+    padding: 0 1px;
+    line-height: .28rem;
+    min-width: .24rem;
+    font-size: .24rem;
+    text-align: center;
+    border-radius: .04rem;
+    font-weight: 400;
+    border: 1px solid transparent;
+}
+
+.label-mod.label-orange {
+    background: #ff8625;
+    border-color: #ff8625;
+    color: #fff;
+    margin: 0 .08rem 0 .10rem;
+}
+
+.k-mode {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	border: 1px solid #adb6ca;
+	color: #adb6ca;
+	overflow: hidden;
+	border-radius: .04rem;
+	font-size: .24rem;
+	margin-left: .10rem;
+}

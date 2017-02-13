@@ -1,0 +1,47 @@
+.md-header {
+	height: 3.2rem;
+	background-image: url('../assets/mbg.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	.mdhl {
+		width: 2.12rem;
+		height: 2.96rem;
+		margin: 0;
+		left: .30rem;
+		bottom: 0;
+	}
+	.mdhr {
+		width: 3.56rem;
+		right: .18rem;
+		text-align: left;
+		p {
+			color: #fff;
+			font-size: .24rem;
+			font-weight: lighter;
+			margin-top: .14rem;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		.m-cname {
+			font-size: .36rem;
+			font-weight: bold;
+			margin-top: .25rem;
+		}
+	}
+	.full-star {
+		margin-top: .4rem;
+		width: 1.8rem;
+		height: 0.3rem;
+	}
+	.score {
+	    right: -.82rem;
+	    top: -.01rem;
+	    font-size: .29rem;
+	    color: #fff;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}

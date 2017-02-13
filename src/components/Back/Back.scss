@@ -1,0 +1,21 @@
+.go-back {
+	background: #ff2c43;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 1rem;
+	z-index: 1998;
+	span {
+		position: absolute;
+		display: inline-block;
+		border: .06rem solid #fff;
+		width: .35rem;
+		height: .35rem;
+		border-right: 0px;
+		border-bottom: 0px;
+		transform: rotate(-45deg);
+		top: 50%;
+		margin-top: -.175rem;
+		left: .8rem;
+	}
+}

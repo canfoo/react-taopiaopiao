@@ -1,0 +1,41 @@
+#ci-d-header {
+	background-color: #fff;
+	padding: .26rem 0 0 .30rem;
+	box-sizing: border-box;
+	text-align: left;
+	.d-na {
+		padding: 0 .30rem .26rem 0;
+		border-bottom: 1px solid #ebebeb;
+		p {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		p:first-child {
+			font-weight: bold;
+			font-size: .32rem;
+			color: #000;
+		}
+		p:last-child {
+			color: #666;
+			font-size: .26rem;
+			margin-top: .12rem;
+		}
+	}
+	.d-new {
+		padding: 0 .30rem .30rem 0;
+		margin-top: .30rem;
+		span:last-child {
+			color: #999;
+		}
+		&:after {
+			content: '>';
+			float: right;
+			font-size: .32rem;
+			color: #999;
+			font-weight: 100;
+			transform: scaleY(1.3);
+			line-height: .30rem;
+		}
+	}
+}

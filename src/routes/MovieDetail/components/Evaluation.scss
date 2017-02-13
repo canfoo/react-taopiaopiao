@@ -1,0 +1,64 @@
+#md-eval {
+	text-align: left;
+	padding: .4rem 0 0rem .3rem;
+	margin-bottom: 1rem;
+	background-color: #fff;
+	header {
+		font-size: .33rem;
+	    color: #000;
+	}
+	.eval-l {
+		figure {
+			width: .50rem;
+			height: .50rem;
+			border-radius: 100%;
+			overflow: hidden;
+			margin: 0;
+		}
+	}
+	.eval-r {
+		box-sizing: border-box;
+		padding-left: .60rem;
+		padding-right: .30rem;
+	}
+	.eval-u-name {
+		max-width: 1.2rem;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		font-size: .28rem;
+		color: #000;
+		font-weight: bold;
+	}
+	.full-star {
+		display: inline-block;
+		margin-left: .10rem;
+	}
+	.eval-u-time {
+		color: #666;
+		font-size: .20rem;
+		margin-top: .13rem;
+		margin-right: .14rem;
+	}
+	.eval-font {
+		font-size: .24rem;
+		line-height: .40rem;
+		padding: .10rem 0;
+	}
+	.eval-lists {
+		li {
+			border-bottom: 1px solid #d9d9d9;
+			padding: .20rem 0;
+		}
+	}
+	.nomore-data {
+		height: 1.2rem;
+		line-height: 1.2rem;
+		text-align: center;
+		font-size: .30rem;
+		color: #666;
+	}
+}
+
+
+

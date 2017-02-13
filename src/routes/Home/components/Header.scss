@@ -1,0 +1,61 @@
+@import '../../../styles/globalVariable.scss';
+
+.h-header {
+	height: .8rem;
+	background-color: #fff;
+	font-size: .28rem;
+	border-bottom: 1px solid $bocolor;
+	div {
+		display: inline-block;
+		height: 100%;
+		line-height: .8rem;
+	}
+	div:first-child {
+		color: #333;
+		width: 35%;
+		span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		span:last-child {
+			content: "";
+			display: inline-block;
+			width: .12rem;
+			height: .12rem;
+			margin-left: 0;
+			border: 1px solid #333;
+			border-top: 0 none;
+			border-left: 0 none;
+			margin-left: 2px;
+			transform: rotate(45deg) translate(0.1rem, -0.12rem);
+		}
+	}
+	div:last-child {
+		width: 65%;
+	}
+	.sel-list {
+		display: -webkit-flex;
+		display: flex;
+		div {
+			flex: 1;
+		}
+		span {
+			display: inline-block;
+			width: 40%;
+			border-bottom: .04rem solid $qdcolor;
+			left: 5%;
+			bottom: 0;
+			transition: left .7s;
+		}
+		.col {
+			left: 55%;
+		}
+		.list-action {
+			color: $qdcolor
+		}
+	}
+}
+
+
+
+

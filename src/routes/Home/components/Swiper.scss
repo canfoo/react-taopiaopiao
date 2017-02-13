@@ -1,0 +1,18 @@
+@import '../../../lib/swiper/swiper.min.css';
+#swiper  {
+	img {
+		width: 100%;
+        height: auto;
+	}
+    .swiper-pagination-bullet {
+    	background: #e5e8e8;
+    	opacity: 1;
+    	width: .16rem;
+    	height: .16rem;
+    }
+    .swiper-pagination-bullet-active {
+    	background: #ff5733;
+    }
+}
+
+

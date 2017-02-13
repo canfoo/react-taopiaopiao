@@ -1,0 +1,81 @@
+@import '../../../lib/swiper/swiper.min.css';
+.ab-photo {
+	padding: .40rem .30rem .50rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-bottom: 1px solid #d9d9d9;
+}
+.crew-ab-photo {
+	padding: .30rem .30rem 0;
+}
+.ab-header {
+	z-index: 1000;
+	text-align: left;
+}
+.ab-header span {
+	font-size: .33rem;
+	line-height: .2rem;
+	color: #000;
+}
+.hide-something {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.am-img {
+	height: 2.28rem;
+}
+.crew-img {
+	height: 2rem;
+}
+.am-img img{
+	height: 100%;
+	width: auto;
+}
+.am-title {
+	width: 100%;
+}
+.am-title p {
+	text-align: center;
+}
+.am-title p:first-child {
+	color: #333;
+	font-size: .26rem;
+}
+.am-title p:last-child {
+	color: #999;
+	font-size: .22rem;
+}
+#movie-detail .swiper-container {
+	height: 3.6rem;
+  	width: 100%;
+  	overflow: initial;
+  	overflow-x: hidden;
+}
+#movie-detail .crew-swiper-container {
+	margin-top: .14rem;
+	height: 3.3rem;
+}
+#movie-detail .swiper-slide {
+	text-align: center;
+	font-size: .36rem;
+	background: #fff;
+	width: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+#movie-detail .swiper-slide:nth-child(2n),
+#movie-detail .swiper-slide:nth-child(3n) {
+    width: auto;
+}
