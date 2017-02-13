@@ -15,7 +15,7 @@
 ```
  git clone https://github.com/canfoo/react-taopiaopiao.git
 ```
- 打开一个终端（称这个终端为A终端）进入到react-taopiaopiao目录安装依赖包（注意：如果npm install 不能正常安装完成，请使用cnpm install进行安装）
+ 打开一个终端（称这个终端为A终端）进入到react-taopiaopiao目录安装依赖包（注意：如果`npm install` 不能正常安装完成，请使用`cnpm install`进行安装）
 ```
  npm install
 ```
@@ -49,11 +49,11 @@
 ├── config                   # 项目配置文件
 ├── server                   # 后台服务
 │   ├── bin                  # 程序启动和渲染
-│	├── database               # 存放页面所需要的json数据
-│	├── public                 # 前端静态资源存放位置
-│	├── routes                 # 路由于请求接口管理
-│	├── views                  # 前端模板存放位置
-│	├── app.js                 # 后台服务入口
+│   ├── database             # 存放页面所需要的json数据
+│   ├── public               # 前端静态资源存放位置
+│   ├── routes               # 路由于请求接口管理
+│   ├── views                # 前端模板存放位置
+│   ├── app.js               # 后台服务入口
 ├── src                      # 程序源文件
 │   ├── main.js              # 程序启动和渲染
 │   ├── components           # 全局组件
