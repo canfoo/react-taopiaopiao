@@ -1,4 +1,6 @@
 # react与express构建淘票票页面
+### [vue2.0构建淘票票，请点击这里](https://github.com/canfoo/vue2.0-taopiaopiao)
+
 ## 描述
 前段时间用[vue2.0构建的淘票票app](https://github.com/canfoo/vue2.0-taopiaopiao)，得到许多童鞋的支持，这些天一气呵成用react又来重构一下这个项目，目的无他，在于分享和共同进步！因此这个项目与[vue2.0-taopiaopiao](https://github.com/canfoo/vue2.0-taopiaopiao)项目的结构是一致的，项目中同样个server服务，模拟服务器环境，为前端提供数据来源，当用`npm run deploy`命令运行前端环境时，就可以直接将前端资源部署到server服务里。因此本项目有两个环境，一个是前端开发环境(端口是3000)，一个是server服务环境(端口是9000)。
 
