@@ -89,6 +89,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.14",
+    "whatwg-fetch": "^2.0.2",
     "yargs": "^5.0.0"
   },
   "devDependencies": {

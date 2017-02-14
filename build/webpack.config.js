@@ -28,8 +28,8 @@ const APP_ENTRY = paths.client('main.js')
 
 webpackConfig.entry = {
   app: __DEV__
-    ? [APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
-    : [APP_ENTRY],
+    ? ['whatwg-fetch', APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
+    : ['whatwg-fetch', APP_ENTRY],
   vendor: config.compiler_vendors
 }
 
