@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //处理webpack服务请求
-app.get('/__webpack_hmr', function(res, res) {
+app.get('/__webpack_hmr', function(req, res) {
   res.send('')
 })
 
@@ -41,12 +41,12 @@ app.get('/movie/city', routes.city);
 app.get('/movie/cinema_detail', routes.cinema_detail);
 
 
-app.get('/app', routes.index); 
+app.get('/app', routes.index);
 app.get('/', (req, res) => {
     res.redirect('app');
-}); 
-app.get(/\/movie\/detail\//, routes.index);  
-app.get(/\/cinema/, routes.index);  
+});
+app.get(/\/movie\/detail\//, routes.index);
+app.get(/\/cinema/, routes.index);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
