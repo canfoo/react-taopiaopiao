@@ -15,7 +15,7 @@ export default class HomeView extends Component {
         } else {
             list = (<Coming {...this.props} />);
         }
-        
+
         return (
         	<section id="home">
         		<HomeHeader {...this.props} />

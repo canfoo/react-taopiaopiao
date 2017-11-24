@@ -29,6 +29,9 @@ if (config.env === 'development') {
 
   debug('Enable webpack dev and HMR middleware')
   app.use(require('webpack-dev-middleware')(compiler, {
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
     publicPath  : webpackConfig.output.publicPath,
     contentBase : paths.client(),
     hot         : true,

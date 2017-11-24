@@ -15,6 +15,7 @@
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --watch",
     "codecov": "cat coverage/*/lcov.info | codecov",
+    "start": "better-npm-run dev",
     "dev": "better-npm-run dev",
     "deploy": "better-npm-run deploy"
   },
