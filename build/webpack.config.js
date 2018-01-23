@@ -28,7 +28,7 @@ const APP_ENTRY = paths.client('main.js')
 
 webpackConfig.entry = {
   app: __DEV__
-    ? ['whatwg-fetch', APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
+  ? ['whatwg-fetch', APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
     : ['whatwg-fetch', APP_ENTRY],
   vendor: config.compiler_vendors
 }
@@ -41,19 +41,19 @@ webpackConfig.output = {
 }
 
 webpackConfig.postcss.push(pxtorem({
-    rootValue: 100,
-    propWhiteList: [],
+  rootValue: 100,
+  propWhiteList: []
 }))
 
 // console.log('paths.html', paths.html())
 
-var viewName = 'index.html';
+var viewName = 'index.html'
 if (__PROD__) {
-  viewName = '../views/index.html';
+  viewName = '../views/index.html'
 }
 
 webpackConfig.plugins = [
-  new webpack.DefinePlugin(config.globals),   //将config.globals变量定义在开发代码中
+  new webpack.DefinePlugin(config.globals),   // 将config.globals变量定义在开发代码中
   new HtmlWebpackPlugin({
     template: paths.client('index.html'),
     hash: false,
@@ -149,8 +149,9 @@ webpackConfig.postcss = [
   })
 ]
 
+/*eslint-disable*/
 webpackConfig.module.loaders.push(
-  { test: /\.woff(\?.*)?$/,  loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff' },
+  { test: /\.woff(\?.*)?$/, loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff' },
   { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff2' },
   { test: /\.otf(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=font/opentype' },
   { test: /\.ttf(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/octet-stream' },
@@ -158,6 +159,7 @@ webpackConfig.module.loaders.push(
   { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=image/svg+xml' },
   { test: /\.(png|jpg|gif)$/,loader: 'url?limit=1000000' }
 )
+/*eslint-enable*/
 
 if (!__DEV__) {
   debug('Apply ExtractTextPlugin to CSS loaders.')

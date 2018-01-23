@@ -39,7 +39,7 @@ const config = {
     'react-router',
     'redux'
   ],
-  //Proxy Configuration -> path: host
+  // Proxy Configuration -> path: host
   proxyTable: {
     '/movie/coming': 'http://localhost:9000',
     '/movie/hot': 'http://localhost:9000',

@@ -4,16 +4,16 @@ const path = require('path')
 const webpack = require('webpack')
 const webpackConfig = require('../build/webpack.config')
 const config = require('../config')
-const proxy = require("express-http-proxy")
+const proxy = require('express-http-proxy')
 const proxyTable = config.proxyTable
 const proxyPaths = Object.keys(proxyTable)
 
 const app = express()
 const paths = config.utils_paths
 
-function setProxyServer(path, host) {
+function setProxyServer (path, host) {
   var apiProxy = proxy(host, {
-    forwardPath:function(req,res){
+    forwardPath:function (req, res) {
       return req._parsedUrl.path
     }
   })
