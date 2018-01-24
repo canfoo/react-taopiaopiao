@@ -1,7 +1,7 @@
-import { connect } from 'react-redux';
-import { updateArea, getAreaData } from '../../../store/cinema';
-import { requestData, receiveData } from '../../../store/request';
-import CinemaDetailView from '../components/CinemaDetailView';
+import { connect } from 'react-redux'
+import { updateArea, getAreaData } from '../../../store/cinema'
+import { requestData, receiveData } from '../../../store/request'
+import CinemaDetailView from '../components/CinemaDetailView'
 
 const mapDispatchtoProps = {
 	updateArea,
@@ -12,7 +12,7 @@ const mapDispatchtoProps = {
 
 const mapStateToProps = (state) => ({
 	cinema: state.cinema,
-  	request: state.request
+  request: state.request
 })
 
 export default connect(mapStateToProps, mapDispatchtoProps)(CinemaDetailView)

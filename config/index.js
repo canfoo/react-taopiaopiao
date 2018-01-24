@@ -36,7 +36,6 @@ const config = {
   compiler_vendors : [
     'react',
     'react-redux',
-    'react-router',
     'redux'
   ],
   // Proxy Configuration -> path: host

@@ -24,6 +24,7 @@ if (__DEV__) {
 
 if (__DEV__) {
   if (module.hot) {
+
     const renderApp = render
     const renderError = (error) => {
       const RedBox = require('redbox-react').default
@@ -37,8 +38,9 @@ if (__DEV__) {
         renderError(error)
       }
     }
-    module.hot.accept('./routes/index', () =>
+    module.hot.accept('./layouts/CoreLayout/CoreLayout', () =>
       setImmediate(() => {
+        console.log('11111---1122222');
         ReactDOM.unmountComponentAtNode(MOUNT_NODE)
         render()
       })

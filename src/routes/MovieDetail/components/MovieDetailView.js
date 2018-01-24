@@ -22,13 +22,12 @@ class MovieDetailView extends Component {
     }
 
 	componentWillMount () {
-        if (!this.props.request) {
-            this.props.router.push('/')
+        if (!this.props.request || JSON.stringify(this.props.request.json) === '{}') {
+            this.props.history.push('/')
             return false
         }
-        console.log(this.props)
         let lists = this.props.request.json.data.data.data.returnValue
-        let movieObj = this.getObjById(this.props.params.id, lists)
+        let movieObj = this.getObjById(this.props.match.params.id, lists)
         let detailStr = movieObj.detailStr
         if (detailStr) {
             this.props.requestData(`/movie/info/?name=${detailStr}`).then((data) => {
@@ -96,7 +95,7 @@ class MovieDetailView extends Component {
         	<section id="MD">
                 <MovieDetaiHeader movieObj={this.state.movieObj}/>
                 {md}
-                <Back router={this.props.router} />
+                <Back router={this.props.history} />
             </section>
         )
   }

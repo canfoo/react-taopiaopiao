@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import CinemaDetailHeader from './Header';
 import Film from './Film';
 import Period from './Period';
@@ -9,10 +9,10 @@ class CinemaDetailView extends Component {
     render () {
         return (
         	<section>
-                <CinemaDetailHeader {...this.props} /> 
-                <Film {...this.props} /> 
+                <CinemaDetailHeader {...this.props} router={this.props.history} />
+                <Film {...this.props} />
                 <Period />
-                <Back router={this.props.router} />
+                <Back router={this.props.history} />
             </section>
         )
   }
