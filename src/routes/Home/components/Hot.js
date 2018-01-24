@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Hot.scss';
+import PropTypes from 'prop-types';
 
 export default class Hot extends Component {
     constructor (props) {
@@ -27,7 +28,7 @@ export default class Hot extends Component {
             let lists = data.data.data.returnValue
             //模拟索引数据的id号
             lists.forEach((item, index) => {
-              item.mID = index  
+              item.mID = index
             })
             this.setState({
                 lists: lists
@@ -47,6 +48,7 @@ export default class Hot extends Component {
     }
 
     playVideo (src, poster) {
+        console.log('this.props', this.props);
         this.props.updateVideoSource(src, poster);
     }
 
@@ -58,7 +60,7 @@ export default class Hot extends Component {
             this.state.lists.map((item) => {
                 let btn = null;
                 if (item.openTime < '2016-12-09') {
-                    btn = (<button className="btn b-btn">购买</button>);  
+                    btn = (<button className="btn b-btn">购买</button>);
                 } else {
                     btn = (<button className="btn forward-b-btn">预售</button>);
                 }
@@ -69,7 +71,7 @@ export default class Hot extends Component {
                                     this.playVideo(item.preview[0].iphoneUrl, `https://gw.alicdn.com/${item.poster}`)
                                 } else {
                                     alert('暂时不能播放')
-                                }                            
+                                }
                             }}>
                                 <LazyLoad throttle={200} height={180}>
                                     <ReactCSSTransitionGroup key="1"
@@ -79,7 +81,7 @@ export default class Hot extends Component {
                                       transitionEnter={false}
                                       transitionLeave={false}>
                                       <img src={`https://gw.alicdn.com/${item.poster}`} />
-                                      <div className="play-icon abs"> 
+                                      <div className="play-icon abs">
                                           <img src={`https://gw.alicdn.com/tps/TB1PH2uLXXXXXaLaXXXXXXXXXXX-60-60.png?v=${item.id}`} />
                                       </div>
                                     </ReactCSSTransitionGroup>
@@ -90,7 +92,7 @@ export default class Hot extends Component {
                                     <Link to={`/movie/detail/${item.mID}`}>
                                         <p className="dot m-name">{item.showName}</p>
                                         <div className="full-star rel">
-                                            <div className="score-start" style={{width: `${10*item.remark}%`}}></div> 
+                                            <div className="score-start" style={{width: `${10*item.remark}%`}}></div>
                                             <span className="score abs">{item.remark}</span>
                                         </div>
                                         <p className="dot m-d">{item.highlight}</p>
@@ -108,15 +110,14 @@ export default class Hot extends Component {
                         </li>
             })
         }
-                    
-                </ul> 
+
+                </ul>
             </section>
         )
   }
 }
 
 Hot.propTypes = {
-    requestData: React.PropTypes.func.isRequired,
-    updateVideoSource: React.PropTypes.func.isRequired
+    requestData: PropTypes.func.isRequired,
+    updateVideoSource: PropTypes.func.isRequired
 }
-

@@ -6,8 +6,8 @@ import CinemaDetailView from '../components/CinemaDetailView';
 const mapDispatchtoProps = {
 	updateArea,
 	getAreaData,
-  	requestData,
-  	receiveData
+	requestData,
+	receiveData
 }
 
 const mapStateToProps = (state) => ({

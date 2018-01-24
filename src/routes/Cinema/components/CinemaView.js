@@ -17,7 +17,4 @@ class Cinema extends Component {
 	}
 }
 
-Cinema.propTypes = {
-}
-
 export default Cinema

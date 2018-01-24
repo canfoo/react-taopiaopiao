@@ -1,4 +1,25 @@
 {
-  "presets": ["es2015", "react", "stage-0"],
-  "plugins": ["transform-runtime", ["import", { "style": "css", "libraryName": "antd-mobile" }]],
+    "presets": [
+        ["env", {
+            "modules": false,
+            "targets": {
+                "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+            }
+        }],
+        "react",
+        "stage-2"
+    ],
+    "plugins": [
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true
+        }],
+        [
+            "import",
+            {
+                "style": "css",
+                "libraryName": "antd-mobile"
+            }]
+        ],
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames'
 import './Header.scss';
+import PropTypes from 'prop-types';
 
 export default class Header extends Component {
     constructor (props) {
@@ -32,14 +33,14 @@ export default class Header extends Component {
     showAreaBox () {
         this.setState({
             showArea: true
-        }) 
+        })
     }
 
     cancelAreaBox (event) {
         if (event.target.id === 'ci-mask') {
             this.setState({
                 showArea: false
-            }) 
+            })
         }
     }
 
@@ -112,17 +113,16 @@ export default class Header extends Component {
     }
                 </ul>
             </section>
-        	
+
         )
   }
 }
 
 Header.propTypes = {
-    city: React.PropTypes.object.isRequired,
-    updateArea: React.PropTypes.func.isRequired,
-    showCity: React.PropTypes.func.isRequired,
-    requestData: React.PropTypes.func.isRequired,
-    getAreaData: React.PropTypes.func.isRequired,
-    updateArea: React.PropTypes.func.isRequired
+    city: PropTypes.object.isRequired,
+    updateArea: PropTypes.func.isRequired,
+    showCity: PropTypes.func.isRequired,
+    requestData: PropTypes.func.isRequired,
+    getAreaData: PropTypes.func.isRequired,
+    updateArea: PropTypes.func.isRequired
 }
-

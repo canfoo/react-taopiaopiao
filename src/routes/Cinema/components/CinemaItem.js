@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './CinemaItem.scss';
+import PropTypes from 'prop-types';
 
 export default class CinemaItem extends Component {
-    isEmptyObject(e) {  
-        let t;  
-        for (t in e)  
-            return !1;  
-        return !0  
+    isEmptyObject(e) {
+        let t;
+        for (t in e)
+            return !1;
+        return !0
     }
 
     render () {
@@ -19,13 +20,13 @@ export default class CinemaItem extends Component {
         }
         return (
             <ul id="ci-lists">
-{ 
+{
     data[area].map((item) => {
         return <li key={item.id}>
                     <Link to={`/cinema/detail/${item.id}`}>
                         <div className="ci-name">
                            <span>{item.cinemaName}</span>
-                           <span className="k-mode" 
+                           <span className="k-mode"
                                 style={{display: item.showMark === '4K厅' ? 'inline-block' : 'none'}}>
                                 4K厅
                             </span>
@@ -54,5 +55,5 @@ export default class CinemaItem extends Component {
 }
 
 CinemaItem.propTypes = {
-    cinema: React.PropTypes.object.isRequired,
+    cinema: PropTypes.object.isRequired,
 }

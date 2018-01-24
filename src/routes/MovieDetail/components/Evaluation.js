@@ -40,5 +40,5 @@ export default class Evaluation extends Component {
 }
 
 Evaluation.propTypes = {
-    evalLists: React.PropTypes.array.isRequired
+    evalLists: PropTypes.array.isRequired
 }

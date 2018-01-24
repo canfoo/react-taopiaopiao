@@ -1,26 +1,27 @@
-import CoreLayout from '../layouts/CoreLayout';
-import Home from './Home';
-import MovieDetail from './MovieDetail';
-import Cinema from './Cinema';
-import CinemaDetail from './CinemaDetail';
-import Me from './Me';
-import NoData from './NoData';
-import PageNotFound from './PageNotFound';
-import Redirect from './PageNotFound/redirect';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import CoreLayout from '../layouts/CoreLayout'
+import Home from './Home'
+import MovieDetail from './MovieDetail'
+import Cinema from './Cinema'
+import CinemaDetail from './CinemaDetail'
+import Me from './Me'
+import NoData from './NoData'
+import PageNotFound from './PageNotFound'
+import Redirect from './PageNotFound/redirect'
+import asyncComponent from '../components/AsyncComponent'
 
-export const createRoutes = (store) => ({
-  path: '/',
-  component: CoreLayout,
-  indexRoute: Home(store),
-  childRoutes: [
-    MovieDetail(store),
-    Cinema(store),
-    CinemaDetail(store),
-    Me(store),
-    NoData(store),
-    PageNotFound(),
-    Redirect
-  ]
-})
+const AsyncHome = asyncComponent(() => require('./Home'))
+// const AsyncMe = asyncComponent(() => require('./Me'))
+const AsyncMe = asyncComponent(() => require('./Me'))
 
-export default createRoutes;
+
+
+export default _ => (
+    <div>
+        <Switch>
+          <Route exact path="/" component={AsyncHome} />
+          <Route path="/me" component={AsyncMe} />
+        </Switch>
+    </div>
+);

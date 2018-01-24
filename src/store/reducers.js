@@ -5,8 +5,8 @@ import cityReducer from './city';
 
 export const makeRootReducer = (asyncReducers) => {
 	return combineReducers({
-		location: locationReducer,
-		video: videoReducer, //同步的redux流
+		// location: locationReducer,
+		// video: videoReducer, //同步的redux流
 		city: cityReducer,
 		...asyncReducers
 	})
@@ -14,7 +14,8 @@ export const makeRootReducer = (asyncReducers) => {
 
 export const injectReducer = (store, { key, reducer }) => {
 	store.asyncReducers[key] = reducer;
-	store.replaceReducer(makeRootReducer(store.asyncReducers));
+	store.replaceReducer(makeRootReducer(store.asyncReducers));  // 替换 store 当前用来计算 state 的 reducer
 }
+
 
 export default makeRootReducer;

@@ -43,18 +43,15 @@ export default class Video extends Component {
 
     render () {
         return (
-        	<section className="mask" style={{display: this.state.videoShow ? 'block' : 'none'}} 
+        	<section className="mask" style={{display: this.state.videoShow ? 'block' : 'none'}}
         	onClick={this.cancelVideoBox.bind(this)}>
         		<div className="video-box abs" onClick={this.videoStar.bind(this)}>
         			<div className="v-cover">
         				<video ref="video" className="v-content" src={this.props.video.src} poster={this.props.video.poster}></video>
-        			</div> 
+        			</div>
         			<div style={{display: this.state.iconShow ? 'block' : 'none'}} className="v-icon abs"></div>
         		</div>
         	</section>
         )
   }
-}
-
-Video.propTypes = {
 }

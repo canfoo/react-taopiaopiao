@@ -14,6 +14,3 @@ export default class HomeView extends Component {
         )
   }
 }
-
-HomeView.propTypes = {
-}

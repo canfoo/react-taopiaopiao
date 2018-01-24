@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import './Header.scss';
+import PropTypes from 'prop-types';
 
 export default class Header extends Component {
   constructor(props) {
@@ -58,7 +59,7 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  switchList: React.PropTypes.func.isRequired,
-  showCity: React.PropTypes.func.isRequired,
-  city: React.PropTypes.object.isRequired
+  switchList: PropTypes.func.isRequired,
+  showCity: PropTypes.func.isRequired,
+  city: PropTypes.object.isRequired
 }

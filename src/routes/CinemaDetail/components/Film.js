@@ -66,7 +66,7 @@ export default class Film extends Component {
                     let winWidth = document.documentElement.clientWidth || document.body.clientWidth;
                     let slideBoxLength = content.slideWidth + ((content.imgNumber-1) * content.imgGap);
                     content.slideMaxLength = slideBoxLength - winWidth - 16;
-                    slideBox.style.width = slideBoxLength + 'px';           
+                    slideBox.style.width = slideBoxLength + 'px';
                 }
             }
         })
@@ -140,7 +140,7 @@ export default class Film extends Component {
         if (this.moveLength < -this.slideMaxLength && this.changeLength < 0) {
             this.rightBoundary = true;
             this.setTranslate(slideBox, -this.slideMaxLength);
-            return; 
+            return;
         }
         this.setTranslate(slideBox, this.moveLength)
         this.moveSpeed = this.moveX - this.prevMoveX;
@@ -162,7 +162,7 @@ export default class Film extends Component {
                 this.slideOffset = 0;
             } else if (this.slideOffset < -this.slideMaxLength) {
                 this.slideOffset = -this.slideMaxLength;
-            } 
+            }
             this.setTranslate(slideBox, this.slideOffset);
         }
     }
@@ -194,11 +194,11 @@ export default class Film extends Component {
         })
     }
 
-    isEmptyObject(e) {  
-        let t;  
-        for (t in e)  
-            return !1;  
-        return !0  
+    isEmptyObject(e) {
+        let t;
+        for (t in e)
+            return !1;
+        return !0
     }
 
     getObjById (id, lists) {
@@ -221,13 +221,13 @@ export default class Film extends Component {
                         return <li key={item.id}>
                                     <img className={classnames({
                                         'click-select': index === 0
-                                    })} style={{height: '1.8rem'}} src={`https://gw.alicdn.com/${item.poster}`} 
+                                    })} style={{height: '1.8rem'}} src={`https://gw.alicdn.com/${item.poster}`}
                                         data-id={item.id} />
                                 </li>
                     })
-                }               
-                            </ul>  
-                            
+                }
+                            </ul>
+
                 </div>
                 <div id="sel-film">
                     <p>{this.state.film.showName}</p>
@@ -236,10 +236,7 @@ export default class Film extends Component {
                         <span className="score abs">{this.state.film.remark}</span>
                     </div>
                 </div>
-            </section>  
+            </section>
         )
   }
-}
-
-Film.propTypes = {
 }

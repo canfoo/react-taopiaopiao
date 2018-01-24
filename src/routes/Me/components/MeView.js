@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import { List } from 'antd-mobile';
 import Back from '../../../components/Back';
 
@@ -22,5 +22,5 @@ const Me = ({router}) => {
 		</section>
 	)
 }
-  
+
 export default withRouter(Me);

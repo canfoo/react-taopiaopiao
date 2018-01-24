@@ -1,6 +1,8 @@
-import React, { Component, PropTypes } from 'react'
-import { hashHistory, browserHistory, Router } from 'react-router'
+import React, { Component } from 'react'
 import { Provider } from 'react-redux'
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import CoreLayout from '../layouts/CoreLayout';
 
 class AppContainer extends Component {
   static propTypes = {
@@ -17,9 +19,9 @@ class AppContainer extends Component {
 
     return (
       <Provider store={store}>
-        <div style={{ height: '100%' }}>
-          <Router history={hashHistory} children={routes} />
-        </div>
+        <HashRouter>
+            <Route component={CoreLayout} />
+        </HashRouter>
       </Provider>
     )
   }

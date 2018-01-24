@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Header.scss';
+import PropTypes from 'prop-types';
 
 export default class Header extends Component {
     constructor (props) {
@@ -33,11 +34,11 @@ export default class Header extends Component {
         return false;
     }
 
-    isEmptyObject(e) {  
-        let t;  
-        for (t in e)  
-            return !1;  
-        return !0  
+    isEmptyObject(e) {
+        let t;
+        for (t in e)
+            return !1;
+        return !0
     }
 
     render () {
@@ -57,6 +58,6 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-    cinema: React.PropTypes.object.isRequired,
-    router: React.PropTypes.object.isRequired
+    cinema: PropTypes.object.isRequired,
+    router: PropTypes.object.isRequired
 }

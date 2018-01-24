@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import './Footer.scss';
 import hokIcon from './assets/hok.svg';
@@ -54,5 +54,5 @@ export const Footer = (location) => {
 		</section>
 	)
 }
-  
+
 export default Footer

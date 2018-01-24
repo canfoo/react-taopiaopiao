@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import ReactDom from 'react-dom';
+import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './Coming.scss';
+import PropTypes from 'prop-types';
 
 export default class Coming extends Component {
     constructor (props) {
@@ -26,18 +26,18 @@ export default class Coming extends Component {
     loadComingList () {
         fetch(`/movie/coming/?limit=${this.state.limit}&offset=${this.state.offset}`)
         .then((response) => response.json())
-        .then((data) => { 
+        .then((data) => {
             let lists = [];
             this.tempLists = this.tempLists.concat(data.data.data.returnValue);
             lists = this.tempLists;
             //模拟索引数据的id号
             lists.forEach((item, index) => {
-              item.mID = index; 
+              item.mID = index;
             });
             this.props.receiveData({
                 data: {
                     data: {
-                        returnValue: lists 
+                        returnValue: lists
                     }
                 }
             })
@@ -70,7 +70,7 @@ export default class Coming extends Component {
             for (let i = 0; i < comingLists.length; i++) {
                 if (item.openTime === comingLists[i].openTime) {
                     comingLists[i].movies.push(item)
-                    hasItem = true 
+                    hasItem = true
                     break
                 }
             }
@@ -123,7 +123,7 @@ export default class Coming extends Component {
                                             this.playVideo(movieItem.preview[0].iphoneUrl, `https://gw.alicdn.com/${movieItem.poster}`)
                                         } else {
                                             alert('暂时不能播放')
-                                        }                            
+                                        }
                                     }}>
                                         <LazyLoad throttle={200} height={180}>
                                             <ReactCSSTransitionGroup key="1"
@@ -133,7 +133,7 @@ export default class Coming extends Component {
                                               transitionEnter={false}
                                               transitionLeave={false}>
                                               <img src={`https://gw.alicdn.com/${movieItem.poster}`} />
-                                              <div className="play-icon abs"> 
+                                              <div className="play-icon abs">
                                                   <img src={`https://gw.alicdn.com/tps/TB1PH2uLXXXXXaLaXXXXXXXXXXX-60-60.png?v=${movieItem.id}`} />
                                               </div>
                                             </ReactCSSTransitionGroup>
@@ -154,8 +154,8 @@ export default class Coming extends Component {
                                     </div>
                                 </li>
                             })
-                        }                    
-                        </ul> 
+                        }
+                        </ul>
                     </div>
                 })
             }
@@ -174,7 +174,6 @@ export default class Coming extends Component {
 }
 
 Coming.propTypes = {
-    receiveData: React.PropTypes.func.isRequired,
-    updateVideoSource: React.PropTypes.func.isRequired
+    receiveData: PropTypes.func.isRequired,
+    updateVideoSource: PropTypes.func.isRequired
 }
-

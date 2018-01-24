@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Swiper.scss';
 import SwiperAction from '../../../lib/swiper/swiper.min.js';
+import PropTypes from 'prop-types';
 
 export default class Swiper extends Component {
     constructor (props) {
@@ -20,7 +21,7 @@ export default class Swiper extends Component {
                 pagination: '.swiper-pagination',
                 paginationClickable: true,
                 autoplay : 3000,
-                autoplayDisableOnInteraction : false,           
+                autoplayDisableOnInteraction : false,
             });
         });
     }
@@ -36,7 +37,7 @@ export default class Swiper extends Component {
                                     <img className="img" src={`https://gw.alicdn.com/${item.smallPicUrl}`} />
                                 </div>
                     })
-                } 
+                }
                     </div>
                     <div className="swiper-pagination"></div>
                 </div>
@@ -46,6 +47,5 @@ export default class Swiper extends Component {
 }
 
 Swiper.propTypes = {
-    requestData: React.PropTypes.func.isRequired
+    requestData: PropTypes.func.isRequired
 }
-

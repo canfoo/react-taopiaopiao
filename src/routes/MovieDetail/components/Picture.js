@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Picture.scss';
 import SwiperAction from '../../../lib/swiper/swiper.min.js';
+import PropTypes from 'prop-types';
 
 export default class Picture extends Component {
     componentDidUpdate (prevProps) {
@@ -36,7 +37,7 @@ export default class Picture extends Component {
                             </div>
                         </div>
             })
-        }  
+        }
                     </div>
                 </div>
             </section>
@@ -45,8 +46,7 @@ export default class Picture extends Component {
 }
 
 Picture.propTypes = {
-    hasName: React.PropTypes.bool.isRequired,
-    title: React.PropTypes.string.isRequired,
-    lists: React.PropTypes.array.isRequired
+    hasName: PropTypes.bool.isRequired,
+    title: PropTypes.string.isRequired,
+    lists: PropTypes.array.isRequired
 }
-

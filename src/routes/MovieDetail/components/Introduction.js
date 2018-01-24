@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import './Introduction.scss';
+import PropTypes from 'prop-types';
 
 export default class Introduction extends Component {
     constructor (props) {
@@ -13,7 +14,7 @@ export default class Introduction extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.description != this.props.description || nextState.expand != this.state.expand;
     }
-    
+
     isExpand () {
         this.setState({
             expand: !this.state.expand
@@ -37,5 +38,5 @@ export default class Introduction extends Component {
 }
 
 Introduction.propTypes = {
-    description: React.PropTypes.string.isRequired
+    description: PropTypes.string.isRequired
 }
