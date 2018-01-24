@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './Evaluation.scss';
+import React, { Component } from 'react'
+import './Evaluation.scss'
+import PropTypes from 'prop-types'
 
 export default class Evaluation extends Component {
     render () {
@@ -7,7 +8,7 @@ export default class Evaluation extends Component {
         	<section id="md-eval">
                 <header>
                     <span>热门评价</span>
-                </header>  
+                </header>
                 <ul className="eval-lists">
     {
         this.props.evalLists.map((item) => {
@@ -21,7 +22,7 @@ export default class Evaluation extends Component {
                             <div>
                                 <span className="eval-u-name">{item.nickName}</span>
                                 <div className="full-star rel">
-                                    <div className="score-start" style={{width: `${item.remark*10}%`}}></div> 
+                                    <div className="score-start" style={{width: `${item.remark*10}%`}}></div>
                                 </div>
                                 <span className="eval-u-time r">12-05 16:07</span>
                             </div>
@@ -31,8 +32,8 @@ export default class Evaluation extends Component {
                         </div>
                     </li>
         })
-    }  
-                </ul> 
+    }
+                </ul>
                 <div className="nomore-data">没有更多了～</div>
             </section>
         )

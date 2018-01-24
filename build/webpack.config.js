@@ -1,9 +1,9 @@
+/*eslint-disable*/
 const webpack = require('webpack')
 const cssnano = require('cssnano')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const config = require('../config')
-const pxtorem = require('postcss-pxtorem')
 const debug = require('debug')('app:webpack:config')
 
 const paths = config.utils_paths
@@ -12,17 +12,18 @@ const __PROD__ = config.globals.__PROD__
 const __TEST__ = config.globals.__TEST__
 
 debug('Creating configuration.')
+
+
 const webpackConfig = {
   name: 'client',
   target: 'web',
   devtool: config.compiler_devtool,
   resolve: {
-    root: paths.client(),
-    extensions: ['', '.web.js', '.js', '.jsx', '.json']
+    extensions: ['.web.js', '.js', '.jsx', '.json']
   },
-  module: {},
-  postcss: []
+  module: {}
 }
+
 
 const APP_ENTRY = paths.client('main.js')
 
@@ -39,13 +40,6 @@ webpackConfig.output = {
   path: paths.dist(),
   publicPath: config.compiler_public_path
 }
-
-webpackConfig.postcss.push(pxtorem({
-  rootValue: 100,
-  propWhiteList: []
-}))
-
-// console.log('paths.html', paths.html())
 
 var viewName = 'index.html'
 if (__PROD__) {
@@ -70,7 +64,7 @@ if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).')
   webpackConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   )
 } else if (__PROD__) {
   debug('Enable plugins for production (OccurenceOrder, Dedupe & UglifyJS).')
@@ -87,83 +81,47 @@ if (__DEV__) {
   )
 }
 
-if (!__TEST__) {
-  webpackConfig.plugins.push(
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor']
-    })
-  )
-}
-
-webpackConfig.module.loaders = [{
-  test: /\.(js|jsx)$/,
-  exclude: /node_modules/,
-  loader: 'babel',
-  query: config.compiler_babel
-}, {
-  test: /\.json$/,
-  loader: 'json'
-}]
-
-const BASE_CSS_LOADER = 'css?sourceMap&-minimize'
-
-webpackConfig.module.loaders.push({
-  test: /\.scss$/,
-  exclude: null,
-  loaders: [
-    'style',
-    BASE_CSS_LOADER,
-    'postcss',
-    'sass?sourceMap'
-  ]
-})
-webpackConfig.module.loaders.push({
-  test: /\.css$/,
-  exclude: null,
-  loaders: [
-    'style',
-    BASE_CSS_LOADER,
-    'postcss'
-  ]
-})
-
-webpackConfig.sassLoader = {
-  includePaths: paths.client('styles')
-}
-
-webpackConfig.postcss = [
-  cssnano({
-    autoprefixer: {
-      add: true,
-      remove: true,
-      browsers: ['last 2 versions']
-    },
-    discardComments: {
-      removeAll: true
-    },
-    discardUnused: false,
-    mergeIdents: false,
-    reduceIdents: false,
-    safe: true,
-    sourcemap: true
-  })
+webpackConfig.module.rules = [{
+    test: /\.(js|jsx)$/,
+    exclude: /node_modules/,
+    use: [{
+      loader: 'babel-loader',
+      query: config.compiler_babel
+    }]
+  }, {
+    test: /\.json$/,
+    use: [{
+      loader: 'json'
+    }]
+  }, {
+    test: /\.scss$/,
+    use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+  }, {
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader', 'postcss-loader']
+  }, {
+    test: /\.(gif|jpe?g|png|svg)$/i,
+    use: [{
+      loader: 'url-loader',
+      query: {
+          limit: 10000
+      }
+    }]
+  },
+  {
+    test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+    use: [{
+      loader: 'url-loader',
+      query: {
+          limit: 20000
+      }
+    }]
+  }
 ]
-
-/*eslint-disable*/
-webpackConfig.module.loaders.push(
-  { test: /\.woff(\?.*)?$/, loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff' },
-  { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/font-woff2' },
-  { test: /\.otf(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=font/opentype' },
-  { test: /\.ttf(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=application/octet-stream' },
-  { test: /\.eot(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[hash:base64:20].[ext]' },
-  { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[hash:base64:20].[ext]&limit=10000&mimetype=image/svg+xml' },
-  { test: /\.(png|jpg|gif)$/,loader: 'url?limit=1000000' }
-)
-/*eslint-enable*/
 
 if (!__DEV__) {
   debug('Apply ExtractTextPlugin to CSS loaders.')
-  webpackConfig.module.loaders.filter((loader) =>
+  webpackConfig.module.rules.filter((loader) =>
     loader.loaders && loader.loaders.find((name) => /css/.test(name.split('?')[0]))
   ).forEach((loader) => {
     const first = loader.loaders[0]

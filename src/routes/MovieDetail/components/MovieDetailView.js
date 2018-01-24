@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { History } from 'react-router';
 //使用withRouter导出MovieDetailView时会在其props加上router这个属性的
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import MovieDetaiHeader from './Header';
 import Introduction from './Introduction';
 import Picture from './Picture.js'
@@ -26,7 +25,8 @@ class MovieDetailView extends Component {
         if (!this.props.request) {
             this.props.router.push('/')
             return false
-        } 
+        }
+        console.log(this.props)
         let lists = this.props.request.json.data.data.data.returnValue
         let movieObj = this.getObjById(this.props.params.id, lists)
         let detailStr = movieObj.detailStr
@@ -79,7 +79,7 @@ class MovieDetailView extends Component {
     render () {
         let md = null;
         if (this.state.detailStr) {
-            md = (  
+            md = (
                     <section>
                         <Introduction description={this.state.description} />
                         <Picture hasName={true} title="演职人员" lists={this.state.artistes}/>
@@ -96,11 +96,10 @@ class MovieDetailView extends Component {
         	<section id="MD">
                 <MovieDetaiHeader movieObj={this.state.movieObj}/>
                 {md}
-                <Back router={this.props.router} /> 
+                <Back router={this.props.router} />
             </section>
         )
   }
 }
 
 export default withRouter(MovieDetailView);
-

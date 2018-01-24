@@ -1,15 +1,28 @@
-import { injectReducer } from '../../store/reducers';
+import { injectReducer } from '../../store/reducers'
+import store from '../../store/createStore'
+import { connect } from 'react-redux'
+import { updateArea, getAreaData } from '../../store/cinema';
+import { requestData, receiveData } from '../../store/request';
+import { showCity } from '../../store/city';
+import CinemaView from './components/CinemaView';
+import cinemaReducer from '../../store/cinema';
+import requestReducer from '../../store/request';
 
-export default (store) => ({
-	path: 'cinema',
-	getComponent (nextState, cb) {
-		const CinemaView = require('./containers/CinemaContainer').default;
-		const cinemaReducer = require('../../store/cinema').default;
-		const cityReducer = require('../../store/city').default;
-		const requestReducer =  require('../../store/request').default;
-		injectReducer(store, { key: 'cinema', reducer: cinemaReducer});
-		injectReducer(store, { key: 'request', reducer: requestReducer});
-		injectReducer(store, { key: 'city', reducer: cityReducer});
-		cb(null, CinemaView)
-	}
+injectReducer(store, { key: 'cinema', reducer: cinemaReducer})
+injectReducer(store, { key: 'request', reducer: requestReducer})
+
+const mapDispatchtoProps = {
+	updateArea,
+	getAreaData,
+	requestData,
+	receiveData,
+	showCity
+}
+
+const mapStateToProps = (state) => ({
+	cinema: state.cinema,
+	request: state.request,
+	city: state.city
 })
+
+export default connect(mapStateToProps, mapDispatchtoProps)(CinemaView)
