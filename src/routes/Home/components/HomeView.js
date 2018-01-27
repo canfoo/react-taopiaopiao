@@ -7,7 +7,7 @@ import './HomeView.scss';
 
 export default class HomeView extends Component {
     render () {
-      console.log(1231);
+      console.log(1222);
         let swiper = null;
         let list = null;
         if (this.props.home.hotListShow) {

@@ -8,7 +8,7 @@ const AsyncMe = asyncComponent(() => import('./Me'))
 const AsyncMoveDetail = asyncComponent(() => import('./MovieDetail'))
 const AsyncCinemaDetail = asyncComponent(() => import('./CinemaDetail'))
 
-export default _ => (
+const routes = _ => (
     <div>
         <Switch>
           <Route exact path="/" component={AsyncHome} />
@@ -19,3 +19,5 @@ export default _ => (
         </Switch>
     </div>
 );
+
+export default routes;

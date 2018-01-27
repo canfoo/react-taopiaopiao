@@ -27,9 +27,11 @@ const webpackConfig = {
 
 const APP_ENTRY = paths.client('main.js')
 
+console.log('APP_ENTRYAPP_ENTRYAPP_ENTRYAPP_ENTRYAPP_ENTRY', APP_ENTRY);
+
 webpackConfig.entry = {
   app: __DEV__
-  ? ['whatwg-fetch', APP_ENTRY].concat(`webpack-hot-middleware/client?path=${config.compiler_public_path}__webpack_hmr`)
+  ? ['react-hot-loader/patch', 'whatwg-fetch', 'webpack-hot-middleware/client',  APP_ENTRY]
     : ['whatwg-fetch', APP_ENTRY],
   vendor: config.compiler_vendors
 }
@@ -85,6 +87,8 @@ webpackConfig.module.rules = [{
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     use: [{
+        loader: 'react-hot-loader/webpack'
+    },{
       loader: 'babel-loader',
       query: config.compiler_babel
     }]

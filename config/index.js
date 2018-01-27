@@ -20,7 +20,7 @@ const config = {
 
   compiler_babel : {
     cacheDirectory : true,
-    plugins        : ['transform-runtime'],
+    plugins        : ["react-hot-loader/babel", 'transform-runtime'],
     presets        : ['env', 'react', 'stage-2']
   },
   compiler_devtool         : 'source-map',

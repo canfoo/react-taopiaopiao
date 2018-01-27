@@ -11,6 +11,7 @@ function link (router) {
 }
 
 const Me = ({router}) => {
+	console.log(123112);
 	return (
 		<section>
 			<List>
@@ -23,4 +24,4 @@ const Me = ({router}) => {
 	)
 }
 
-export default withRouter(Me);
+export default Me;
