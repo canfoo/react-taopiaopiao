@@ -11,7 +11,7 @@ function link (router) {
 }
 
 const Me = ({router}) => {
-	console.log(123112);
+	console.log(122);
 	return (
 		<section>
 			<List>

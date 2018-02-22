@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import store from './store/createStore'
 import App from './containers/AppContainer'
 import { AppContainer } from 'react-hot-loader'
-import MeC from './routes/Me'
-import CoreLayout from './layouts/CoreLayout'
+// import MeC from './routes/Me'
+// import CoreLayout from './layouts/CoreLayout'
 
 import { Provider } from 'react-redux'
 import { HashRouter, Route } from 'react-router-dom'
@@ -62,10 +62,10 @@ if (__DEV__) {
       setImmediate(() => {
         console.log('11111---11222222');
         ReactDOM.unmountComponentAtNode(MOUNT_NODE)
-        render(MeC)
+        render(App)
       })
     )
   }
 }
 
-render(MeC)
+render(App)
